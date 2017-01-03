@@ -1,0 +1,15 @@
+h1{
+  font-family: helvetica;
+}
+p{
+  color: lightgrey;
+}
+p#p_3{
+  background-color: purple;
+}
+.paragraph{
+  background-color: #0000FF;
+}
+#p_3{
+  border: 5px dashed #FF0000;
+}
