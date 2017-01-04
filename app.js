@@ -8,7 +8,7 @@ if(conf === true){
   var x = 0;
   for(var index = 5; index > 0; index--){
     var answer = prompt(question[x]).toLowerCase();
-    if(answer === 'yes' || answer === 'yeah' || answer === 'ya'){
+    if(answer === 'yes' || answer === 'yeah' || answer === 'ya' || answer === 'y' || answer === 'sure' || answer === 'confirm'){
       alert(responseOne[x]);
       console.log('Questing ' + x + ':');
     }
