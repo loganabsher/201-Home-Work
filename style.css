@@ -1,13 +1,20 @@
 h2{
   font-family: helvetica;
+  color: darkgreen;
+}
+p{
+  font-family: helvetica;
+  color: darkgreen;
+}
+ul{
+  font-family: times;
+  color: darkblue;
 }
 #biography{
-  background-color: purple;
-  color: yellow;
+
 }
 .story{
-  background-color: #0000FF;
-  color: lightgreen;
+
 }
 html{
   border: 5px dashed white;
