@@ -1,71 +1,21 @@
 'use strict';
-
-var answer0 = confirm('Are you ready?');
-if(answer0 === true){
-  console.log('Woo! User is ready!');
+var conf = confirm('Would you like to play a guessing game?');
+var question = ['Is Logan\'s favorite color blue?', 'Is Logan 20 years old?', 'Does Logan enjoy long walks on the beach?', 'Is Logan a very cool person?', 'Is Logan a psycopathic murderer?'];
+var responseOne = ['You were right Logan\'s favortie color is blue.', 'Yes, Logan is 20 years old.', 'No Logan hates the beach, it\'s so cold why would you ever go to the beach here!', 'Yes thankyou I am great', 'Maybe.'];
+var responseTwo = ['You were wrong Logan likes the color blue the most', 'Do I really look that old?', 'You were right the beach sucks', 'Wow really?', 'Maybe.'];
+if(conf === true){
+  console.log('yes');
+  var x = 0;
+  for(var index = 5; index > 0; index--){
+    var answer = prompt(question[x]).toLowerCase();
+    if(answer === 'yes' || answer === 'yeah' || answer === 'ya'){
+      alert(responseOne[x]);
+      console.log('Questing ' + x + ':');
+    }
+    else{
+      alert(responseTwo[x]);
+      console.log('Questing ' + x + ':');
+    }
+    x++;
+  }
 }
-else{
-  console.log('Sorry, too bad....');
-}
-
-alert('I am going to ask you five questions about Logan.');
-
-var question1 = prompt('Is Logan\'s favorite color blue?').toLowerCase();
-if (question1 === 'yes' || question1 === 'yeah' || question1 === 'ya' || question1 === 'y' || question1 === 'sure'){
-  alert('You were correct!');
-  var answer1 = 'correct!';
-}
-else{
-  alert('You were wrong.');
-  var answer1 = 'incorrect!';
-}
-
-var question2 = prompt('Did Logan play water polo growing up?').toLowerCase();
-if (question2 === 'yes' || question2 === 'yeah' || question2 === 'ya' || question2 === 'y' || question2 === 'sure'){
-  alert('You were correct!');
-  var answer2 = 'correct!';
-}
-else{
-  alert('You were wrong.');
-  var answer2 = 'incorrect!';
-}
-
-var question3 = prompt('Is Logan a psycopathic murderer?').toLowerCase();
-if (question3 === 'yes' || question3 === 'yeah' || question3 === 'ya' || question3 === 'y' || question3 === 'sure'){
-  alert('You were wrong.');
-  var answer3 = 'incorrect!';
-}
-else{
-  alert('You were correct!');
-  var answer3 = 'correct!';
-}
-
-var question4 = prompt('Does Logan enjoy long walks on the beach?').toLowerCase();
-if (question4 === 'yes' || question4 === 'yeah' || question4 === 'ya' || question4 === 'y' || question4 === 'sure'){
-  alert('You were wrong.');
-  var answer4 = 'incorrect!';
-}
-else{
-  alert('You were correct!');
-  var answer4 = 'correct!';
-}
-
-var question5 = prompt('Does Logan own a cat?').toLowerCase();
-if (question5 === 'yes' || question5 === 'yeah' || question5 === 'ya' || question5 === 'y' || question5 === 'sure'){
-  alert('You were correct!');
-  var answer5 = 'correct!';
-}
-else{
-  alert('You were wrong.');
-  var answer5 = 'incorrect!';
-}
-
-document.write('Is Logan\'s favorite color blue? Your answer: ' + question1 + ' Your result: ' + answer1 + '<br>');
-
-document.write('Did Logan play water polo growing up? Your answer: ' + question2 + ' Your result: ' + answer2 + '<br>');
-
-document.write('Is Logan a psycopathic murderer? Your answer: ' + question3 + ' Your result: ' + answer3 + '<br>');
-
-document.write('Does Logan enjoy long walks on the beach? Your answer: ' + question4 + ' Your result: ' + answer4 + '<br>');
-
-document.write('Does Logan own a cat? Your answer: ' + question5 + ' Your result: ' + answer5);
