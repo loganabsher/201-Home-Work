@@ -2,13 +2,16 @@ h1{
   font-family: helvetica;
 }
 p{
-  color: lightgrey;
+  background-color: orange;
+  color: black;
 }
-p#p_3{
+#p_3{
   background-color: purple;
+  color: yellow;
 }
 .paragraph{
   background-color: #0000FF;
+  color: lightgreen;
 }
 html{
   border: 5px dashed #FF0000;
