@@ -1,18 +1,16 @@
-h1{
+h2{
   font-family: helvetica;
 }
-p{
-  background-color: orange;
-  color: black;
-}
-#p_3{
+#biography{
   background-color: purple;
   color: yellow;
 }
-.paragraph{
+.story{
   background-color: #0000FF;
   color: lightgreen;
 }
 html{
-  border: 5px dashed #FF0000;
+  border: 5px dashed white;
+  align-items: center;
+  background-color: black;
 }
