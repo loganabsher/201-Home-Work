@@ -10,6 +10,6 @@ p#p_3{
 .paragraph{
   background-color: #0000FF;
 }
-#p_3{
+html{
   border: 5px dashed #FF0000;
 }
