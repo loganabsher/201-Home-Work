@@ -50,9 +50,9 @@ if(conf === true){
     }
   }
   if (total < 7){
-    document.write('<p class=".document">You got ' + total + ' out of 7 correct, ' + name + '! Better luck next time! <br>');
+    document.write('<p class=".document">You got ' + total + ' out of 7 correct, ' + name + '! Better luck next time! <br><img src="giphy.gif">');
   }
   else{
-    document.write('<p class=".document">GOOD JOB ' + name + '! <br>');
+    document.write('<p class=".document">GOOD JOB ' + name + '! <br><img src="giphy(4).gif">');
   }
 }

@@ -18,6 +18,10 @@ ol{
   font-family: times;
   color: cyan;
 }
+#list{
+  float:left;
+  width: 40%;
+}
 #listOne{
   float: left;
   width: 33%;
