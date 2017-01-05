@@ -9,7 +9,7 @@ var conf = confirm(name + ', would you like to play a guessing game?');
 
 var question = ['Does Logan Like cats?', 'Is Logan 20 years old?', 'Does Logan enjoy long walks on the beach?', 'Is Logan a very cool person?', 'Does Logan like the water?', 'Is Logan a psycopathic murderer?'];
 
-var responseOne = ['#catmasterrace', 'Yes, Logan is 20 years old.', 'No Logan hates the beach, it\'s so cold why would you ever go to the beach here!', 'Yes thankyou I am great', 'Yes, Logan has swam for 15 years and loves the water.', 'Maybe.'];
+var responseOne = ['#catmasterrace', 'Yes, Logan is 20 years old.', 'No Logan hates the beach, it\'s so cold why would you ever go to the beach here!', 'Yes thank you I am great', 'Yes, Logan has swam for 15 years and loves the water.', 'Maybe.'];
 
 var responseTwo = ['#catsarebetter', 'Do I really look that old?', 'You were right the beach sucks', 'Wow really?', 'I\'m a fish', 'Maybe.'];
 
@@ -34,11 +34,11 @@ if(conf === true){
     }
     x++;
   }
-  var r = Math.round((Math.random() * 6 + 1));
+  var r = Math.round((Math.random() * 5 + 1));
   console.log(r);
   for(var i = 6; i > 0; i --){
     var guess = prompt('1)red, 2)blue, 3)green, 4)orange, 5)turquoise, 6)rainbow');
-    if(guess === r){
+    if(guess == r){
       alert('YOU WIN!');
       total++;
       break;
@@ -48,9 +48,9 @@ if(conf === true){
     }
   }
   if (total < 7){
-    document.write('You got ' + total + ' out of 7 correct, ' + name + '! Better luck next time!');
+    document.write('<p class=".document">You got ' + total + ' out of 7 correct, ' + name + '! Better luck next time! </br>');
   }
   else{
-    document.write('GOOD JOB ' + name + '!');
+    document.write('<p class=".document">GOOD JOB ' + name + '!');
   }
 }

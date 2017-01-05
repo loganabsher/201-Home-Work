@@ -16,7 +16,7 @@ ul{
 }
 ol{
   font-family: times;
-  color: lightblue;
+  color: cyan;
 }
 #biography{
   font-family: sans-serif;
@@ -29,9 +29,6 @@ html{
   border: 5px dashed white;
   background-color: black;
 }
-document.write{
-  color: white;
-}
-script{
+.document{
   color: white;
 }
