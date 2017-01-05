@@ -14,6 +14,10 @@ ul{
   font-family: times;
   color: lightblue;
 }
+ol{
+  font-family: times;
+  color: lightblue;
+}
 #biography{
   font-family: sans-serif;
   color: white;
@@ -23,6 +27,11 @@ ul{
 }
 html{
   border: 5px dashed white;
-  align-items: center;
   background-color: black;
+}
+document.write{
+  color: white;
+}
+script{
+  color: white;
 }
