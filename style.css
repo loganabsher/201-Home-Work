@@ -1,6 +1,6 @@
 body{
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 h2{
   font-family: helvetica;
@@ -12,15 +12,23 @@ p{
 }
 ul{
   font-family: times;
-  color: lightblue;
+  color: turquoise;
 }
 ol{
   font-family: times;
   color: cyan;
 }
-#biography{
-  font-family: sans-serif;
-  color: white;
+#listOne{
+  float: left;
+  width: 33%;
+}
+#listTwo{
+  float: left;
+  width: 33%;
+}
+#listThree{
+  float: left;
+  width: 33%;
 }
 .story{
   color: green;
@@ -30,5 +38,8 @@ html{
   background-color: black;
 }
 .document{
-  color: white;
+  border: 5px solid white;
+  background-color: darkblue;
+  color: lightpink;
+
 }
