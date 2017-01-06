@@ -1,59 +1,38 @@
-body{
-  padding-left: 15%;
-  padding-right: 15%;
-}
 h2{
   font-family: helvetica;
   color: darkgreen;
-
 }
 p{
   font-family: helvetica;
   color: darkgreen;
 }
-ul{
-  font-family: times;
-  color: turquoise;
-}
 ol{
   font-family: times;
   color: cyan;
 }
-#list{
-//  float: left;
-  width: 40%;
-}
-.ul {
+#favThings {
   float: left;
+  font-family: times;
+  color: turquoise;
 }
-#listOne{
+.list{
   float: left;
-  width: 33%;
-}
-#listTwo{
-  float: left;
-  width: 33%;
-}
-#listThree{
-  float: left;
-  width: 33%;
-}
-.story{
-  color: green;
+  width: 33%
 }
 html{
   border: 5px dashed white;
   background-color: black;
+  padding-left: 15%;
+  padding-right: 15%;
 }
 .document{
   border: 5px solid white;
   background-color: darkblue;
   color: lightpink;
 }
-
 #dog {
   float: right;
 }
-.doge {
+#Story {
   margin-top: 10em;
 }
