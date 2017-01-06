@@ -5,6 +5,7 @@ body{
 h2{
   font-family: helvetica;
   color: darkgreen;
+
 }
 p{
   font-family: helvetica;
@@ -19,8 +20,11 @@ ol{
   color: cyan;
 }
 #list{
-  float:left;
+//  float: left;
   width: 40%;
+}
+.ul {
+  float: left;
 }
 #listOne{
   float: left;
@@ -45,5 +49,11 @@ html{
   border: 5px solid white;
   background-color: darkblue;
   color: lightpink;
+}
 
+#dog {
+  float: right;
+}
+.doge {
+  margin-top: 10em;
 }
