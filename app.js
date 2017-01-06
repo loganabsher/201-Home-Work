@@ -24,35 +24,64 @@ if(conf === true){
       document.write('<p class="document">' + (x + 1) + ') ' + question[x] + ': ' + responseOne[x]);
       if(x != 3){
         total++;
+        console.log(total);
       }
     }
     else{
       alert(responseTwo[x]);
       console.log('Question ' + (x + 1) + ':' + responseTwo[x]);
       document.write('<p class="document">' + (x + 1) + ') ' + question[x] + ': ' + responseTwo[x]);
-      if (x === 3 || x === 6){
-        total++;
-      }
+      // if (x === 3 || x === 6){
+      //   total++;
+      //   console.log(total);
+      // }
     }
     x++;
   }
-  var r = Math.round((Math.random() * 5 + 1));
+
+  total = total + game();
+  console.log(game());
+// function game() {
+//   var r = Math.round((Math.random() * 9 + 1));
+//   console.log(r);
+//   for(var i = 6; i > 0; i --){
+//     var guess = prompt('Guess a number between 1 & 10');
+//     if(guess == r){
+//       alert('YOU WIN!');
+//       total++;
+//       break;
+//     }
+//     else{
+//       alert('wrong');
+//     }
+//   }
+// }
+  if (total < 7){
+    document.write('<p class="document">You got ' + total + ' out of 7 correct, ' + name + '! Better luck next time! <br><img src="giphy.gif">');
+  }
+  else{
+    document.write('<p class="document">GOOD JOB ' + name + '! <br><img src="giphy (4).gif">');
+  }
+}
+
+function game() {
+  var r = Math.round((Math.random() * 9 + 1));
+  var total = 0;
   console.log(r);
   for(var i = 6; i > 0; i --){
-    var guess = prompt('1)red, 2)blue, 3)green, 4)orange, 5)turquoise, 6)rainbow');
+    var guess = prompt('Guess a number between 1 & 10');
     if(guess == r){
       alert('YOU WIN!');
       total++;
       break;
     }
-    else{
-      alert('wrong');
+    else if (guess > r) {
+      alert('It is lower');
+    } else if (guess < r) {
+      alert('It is higher');
+    } else {
+      alert('You\'re crazy, that is not a number!');
     }
   }
-  if (total < 7){
-    document.write('<p class=".document">You got ' + total + ' out of 7 correct, ' + name + '! Better luck next time! <br><img src="giphy.gif">');
-  }
-  else{
-    document.write('<p class=".document">GOOD JOB ' + name + '! <br><img src="giphy(4).gif">');
-  }
+  return total;
 }
