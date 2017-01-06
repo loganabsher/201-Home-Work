@@ -1,18 +1,59 @@
-h1{
+body{
+  padding-left: 15%;
+  padding-right: 15%;
+}
+h2{
   font-family: helvetica;
+  color: darkgreen;
+
 }
 p{
-  background-color: orange;
-  color: black;
+  font-family: helvetica;
+  color: darkgreen;
 }
-#p_3{
-  background-color: purple;
-  color: yellow;
+ul{
+  font-family: times;
+  color: turquoise;
 }
-.paragraph{
-  background-color: #0000FF;
-  color: lightgreen;
+ol{
+  font-family: times;
+  color: cyan;
+}
+#list{
+//  float: left;
+  width: 40%;
+}
+.ul {
+  float: left;
+}
+#listOne{
+  float: left;
+  width: 33%;
+}
+#listTwo{
+  float: left;
+  width: 33%;
+}
+#listThree{
+  float: left;
+  width: 33%;
+}
+.story{
+  color: green;
 }
 html{
-  border: 5px dashed #FF0000;
+  border: 5px dashed white;
+  background-color: black;
+}
+.document{
+  border: 5px solid white;
+  background-color: darkblue;
+  color: lightpink;
+}
+
+#dog {
+  float: right;
+}
+.doge {
+  margin-top: 10em;
 }

@@ -1,71 +1,87 @@
 'use strict';
 
-var answer0 = confirm('Are you ready?');
-if(answer0 === true){
-  console.log('Woo! User is ready!');
-}
-else{
-  console.log('Sorry, too bad....');
+var name = prompt('What is your name?');
+while(name.length < 1){
+  name = prompt('Please enter a valid name.');
 }
 
-alert('I am going to ask you five questions about Logan.');
+var conf = confirm(name + ', would you like to play a guessing game?');
 
-var question1 = prompt('Is Logan\'s favorite color blue?').toLowerCase();
-if (question1 === 'yes' || question1 === 'yeah' || question1 === 'ya' || question1 === 'y' || question1 === 'sure'){
-  alert('You were correct!');
-  var answer1 = 'correct!';
-}
-else{
-  alert('You were wrong.');
-  var answer1 = 'incorrect!';
+var question = ['Does Logan Like cats?', 'Do you think Logan is over 19 years old?', 'Does Logan enjoy long walks on the beach?', 'Is Logan a very cool person?', 'Does Logan like the water?', 'Is Logan a psycopathic murderer?'];
+
+var responseOne = ['#catmasterrace', 'Yes, Logan is 20 years old.', 'No Logan hates the beach, it\'s so cold why would you ever go to the beach here!', 'Yes thank you I am great', 'Yes, Logan has swam for 15 years and loves the water.', 'Maybe.'];
+
+var responseTwo = ['#catsarebetter', 'Do I really look that young?', 'You were right the beach sucks', 'Wow really?', 'I\'m a fish', 'Maybe.'];
+
+if(conf === true){
+  var x = 0;
+  var total = 0;
+  for(var index = 6; index > 0; index--){
+    var answer = prompt(question[x]).toLowerCase();
+    if(answer === 'yes' || answer === 'yeah' || answer === 'ya' || answer === 'y' || answer === 'sure' || answer === 'confirm'){
+      alert(responseOne[x]);
+      console.log('Question ' + (x + 1) + ':' + responseOne[x]);
+      document.write('<p class="document">' + (x + 1) + ') ' + question[x] + ': ' + responseOne[x]);
+      if(x != 3){
+        total++;
+        console.log(total);
+      }
+    }
+    else{
+      alert(responseTwo[x]);
+      console.log('Question ' + (x + 1) + ':' + responseTwo[x]);
+      document.write('<p class="document">' + (x + 1) + ') ' + question[x] + ': ' + responseTwo[x]);
+      // if (x === 3 || x === 6){
+      //   total++;
+      //   console.log(total);
+      // }
+    }
+    x++;
+  }
+
+  total = total + game();
+  console.log(game());
+// function game() {
+//   var r = Math.round((Math.random() * 9 + 1));
+//   console.log(r);
+//   for(var i = 6; i > 0; i --){
+//     var guess = prompt('Guess a number between 1 & 10');
+//     if(guess == r){
+//       alert('YOU WIN!');
+//       total++;
+//       break;
+//     }
+//     else{
+//       alert('wrong');
+//     }
+//   }
+// }
+  if (total < 7){
+    document.write('<p class="document">You got ' + total + ' out of 7 correct, ' + name + '! Better luck next time! <br><img src="giphy.gif">');
+  }
+  else{
+    document.write('<p class="document">GOOD JOB ' + name + '! <br><img src="giphy (4).gif">');
+  }
 }
 
-var question2 = prompt('Did Logan play water polo growing up?').toLowerCase();
-if (question2 === 'yes' || question2 === 'yeah' || question2 === 'ya' || question2 === 'y' || question2 === 'sure'){
-  alert('You were correct!');
-  var answer2 = 'correct!';
+function game() {
+  var r = Math.round((Math.random() * 9 + 1));
+  var total = 0;
+  console.log(r);
+  for(var i = 6; i > 0; i --){
+    var guess = prompt('Guess a number between 1 & 10');
+    if(guess == r){
+      alert('YOU WIN!');
+      total++;
+      break;
+    }
+    else if (guess > r) {
+      alert('It is lower');
+    } else if (guess < r) {
+      alert('It is higher');
+    } else {
+      alert('You\'re crazy, that is not a number!');
+    }
+  }
+  return total;
 }
-else{
-  alert('You were wrong.');
-  var answer2 = 'incorrect!';
-}
-
-var question3 = prompt('Is Logan a psycopathic murderer?').toLowerCase();
-if (question3 === 'yes' || question3 === 'yeah' || question3 === 'ya' || question3 === 'y' || question3 === 'sure'){
-  alert('You were wrong.');
-  var answer3 = 'incorrect!';
-}
-else{
-  alert('You were correct!');
-  var answer3 = 'correct!';
-}
-
-var question4 = prompt('Does Logan enjoy long walks on the beach?').toLowerCase();
-if (question4 === 'yes' || question4 === 'yeah' || question4 === 'ya' || question4 === 'y' || question4 === 'sure'){
-  alert('You were wrong.');
-  var answer4 = 'incorrect!';
-}
-else{
-  alert('You were correct!');
-  var answer4 = 'correct!';
-}
-
-var question5 = prompt('Does Logan own a cat?').toLowerCase();
-if (question5 === 'yes' || question5 === 'yeah' || question5 === 'ya' || question5 === 'y' || question5 === 'sure'){
-  alert('You were correct!');
-  var answer5 = 'correct!';
-}
-else{
-  alert('You were wrong.');
-  var answer5 = 'incorrect!';
-}
-
-document.write('Is Logan\'s favorite color blue? Your answer: ' + question1 + ' Your result: ' + answer1 + '<br>');
-
-document.write('Did Logan play water polo growing up? Your answer: ' + question2 + ' Your result: ' + answer2 + '<br>');
-
-document.write('Is Logan a psycopathic murderer? Your answer: ' + question3 + ' Your result: ' + answer3 + '<br>');
-
-document.write('Does Logan enjoy long walks on the beach? Your answer: ' + question4 + ' Your result: ' + answer4 + '<br>');
-
-document.write('Does Logan own a cat? Your answer: ' + question5 + ' Your result: ' + answer5);
