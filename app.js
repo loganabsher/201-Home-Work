@@ -9,16 +9,12 @@ while(name.length < 1){
   name = prompt('Please enter a valid name.');
 }
 
-var yesAnswers = ['yes', 'ya', 'y', 'yeah', 'ye', 'sure', 'confirm'];
-
-var noAnswers = ['no', 'nope', 'n', 'noo'];
-
 var conf = confirm(name + ', would you like to play a guessing game?');
 
 if(conf === true){
   console.log('game starting');
-  total = total + guess();
-  total = total + game();
+  total = total + guess(total);
+  total = total + game(total);
   // var x = 0;
   // for(var index = 6; index > 0; index--){
   //   var answer = prompt(question[x]).toLowerCase();
@@ -67,9 +63,8 @@ if(conf === true){
   }
 }
 
-function game() {
+function game(total) {
   var r = Math.round((Math.random() * 9 + 1));
-  var total = 0;
   console.log(r);
   console.log('for loop starting');
   for(var i = 6; i > 0; i --){
@@ -97,30 +92,42 @@ function game() {
   return total;
 }
 
-function guess(){
-  var question = ['Does Logan Like cats?', 'Do you think Logan is over 19 years old?', 'Does Logan enjoy long walks on the beach?', 'Is Logan a very cool person?', 'Does Logan like the water?', 'Is Logan a psycopathic murderer?'];
+function guess(total){
+  var question = ['Does Logan have a cat?', 'Do you think Logan is over the age of 19?', 'Does Logan enjoy long walks on the beach?', 'Has Logan been outside of the USA?', 'Does Logan like the water?', 'Is Logan a psycopathic murderer?'];
 
-  var responseOne = ['#catmasterrace', 'Yes, Logan is 20 years old.', 'You were right the beach sucks', 'Yes thank you I am great', 'Yes, Logan has swam for 15 years and loves the water.', 'Maybe.'];
+  var responseOne = ['#catmasterrace', 'Yes, Logan is 20 years old.', 'No Logan hates the beach, it\'s so cold why would you ever go to the beach here!', 'Yes, Logan has visited Canada,  Mexico, Cambodia and France', 'Yes, Logan has swam for 15 years and loves the water, plus water polo.', 'Maybe...'];
 
-  var responseTwo = ['#catsarebetter', 'Do I really look that young?', 'No Logan hates the beach, it\'s so cold why would you ever go to the beach here!', 'Wow really?', 'I\'m a fish', 'Maybe.'];
+  var responseTwo = ['#catsarebetter', 'Do I really look that young?', 'You were right the beach sucks', 'Wow really?', 'I\'ve been on the swim team for 15 years, and I play water polo on top of that!', 'Obviously...'];
 
-  total = 0;
+  var yesAnswers = ['yes', 'ya', 'y', 'yeah', 'ye', 'sure', 'confirm'];
+
+  var noAnswers = ['no', 'nope', 'n', 'noo'];
+
   console.log('for loop starting');
   for(var i = 0; i < question.length; i++){
-    console.log('i value ' + i);
-    var answer = prompt(question[i]).toLowerCase();
-    if(answer === 'yes' || answer === 'yeah' || answer === 'ya' || answer === 'y' || answer === 'sure' || answer === 'confirm'){
+    var input = prompt(question[i]).toLowerCase();
+    console.log(question[i]);
+    console.log(i);
+    console.log(yesAnswers);
+    console.log(noAnswers);
+    if(input.includes(yesAnswers)){
+      if(i != 3 || i != 5){
+        console.log(total);
+        total++;
+      }
       alert(responseOne[i]);
-      console.log('Question ' + (i + 1) + ':' + responseOne[i]);
-      document.write('<p class="document">' + (i + 1) + ') ' + question[i] + ': ' + responseOne[i] + '</p>');
-      total++;
     }
-    else{
+    else if(input.includes(noAnswers)){
+      if(i === 3 || i === 5){
+        console.log(total);
+        total++;
+      }
       alert(responseTwo[i]);
-      console.log('Question ' + (i + 1) + ':' + responseTwo[i]);
-      document.write('<p class="document">' + (inedx + 1) + ') ' + question[i] + ': ' + responseTwo[i] + '</p>');
     }
+    // else{
+    //   console.log('invalid response');
+    //   i--;
+    // }
   }
-  console.log('returning total ' + total);
   return total;
 }
