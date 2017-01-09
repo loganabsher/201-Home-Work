@@ -12,6 +12,7 @@ var conf = confirm(name + ', would you like to play a guessing game?');
 if(conf === true){
   var total = parseInt(game());
   total = total + parseInt(guess());
+  console.log('total ' + total);
   if (total == 7){
     console.log('winner ' + total);
     document.write('<p class="document">GOOD JOB ' + name + '! <br><img src="giphy (4).gif"></p>');
@@ -21,6 +22,7 @@ if(conf === true){
     document.write('<p class="document">You got ' + total + ' out of 7 correct, ' + name + '! Better luck next time! <br><img src="giphy.gif"></p>');
   }
 }
+
 function game() {
   var result = 0;
   var r = Math.round((Math.random() * 9 + 1));
@@ -92,5 +94,6 @@ function guess(){
         document.write('<p class="document">Incorrect! ' + question[i] + ' ' + responseTwo[i]);
       }
     }
+    return result;
   }
 }
