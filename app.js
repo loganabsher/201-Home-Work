@@ -10,14 +10,15 @@ while(name.length < 1){
 var conf = confirm(name + ', would you like to play a guessing game?');
 
 if(conf === true){
-  var total = game();
-  if (total < 7){
-    console.log('loss ' + total);
-    document.write('<p class="document">You got ' + total + ' out of 7 correct, ' + name + '! Better luck next time! <br><img src="giphy.gif"></p>');
-  }
-  else{
+  var total = parseInt(game());
+  total = total + parseInt(guess());
+  if (total == 7){
     console.log('winner ' + total);
     document.write('<p class="document">GOOD JOB ' + name + '! <br><img src="giphy (4).gif"></p>');
+  }
+  else{
+    console.log('loss ' + total);
+    document.write('<p class="document">You got ' + total + ' out of 7 correct, ' + name + '! Better luck next time! <br><img src="giphy.gif"></p>');
   }
 }
 function game() {
@@ -61,4 +62,35 @@ function guess(){
 
   var noAnswers = ['no', 'nope', 'n', 'noo'];
 
+  var result = 0;
+
+  for(var i = 0; i < question.length; i++){
+    var input = prompt(question[i]).toLowerCase();
+    if(yesAnswers.includes(input)){
+      if(i != 2){
+        alert(responseOne[i]);
+        console.log(question[i] + ' ' + responseOne[i]);
+        document.write('<p class="document">Correct! ' + question[i] + ' ' + responseOne[i]);
+        result++;
+      }
+      else{
+        alert(responseOne[i]);
+        console.log(question[i] + ' ' + responseOne[i]);
+        document.write('<p class="document">Incorrect! ' + question[i] + ' ' + responseOne[i]);
+      }
+    }
+    else{
+      if(i == 2){
+        alert(responseTwo[i]);
+        console.log(question[i] + ' ' + responseTwo[i]);
+        document.write('<p class="document">Correct! ' + question[i] + ' ' + responseTwo[i]);
+        result++;
+      }
+      else{
+        alert(responseTwo[i]);
+        console.log(question[i] + ' ' + responseTwo[i]);
+        document.write('<p class="document">Incorrect! ' + question[i] + ' ' + responseTwo[i]);
+      }
+    }
+  }
 }
